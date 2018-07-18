@@ -38,6 +38,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { ToastPage } from '../pages/toast/toast';
 import { TogglePage } from '../pages/toggle/toggle';
 import { ToolbarPage } from '../pages/toolbar/toolbar';
+import { HttpModule } from '../../node_modules/@angular/http';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,11 @@ import { ToolbarPage } from '../pages/toolbar/toolbar';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp,{
+      scrollAssist: true,
+      autoFocusAssist: true
+    }),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

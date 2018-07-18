@@ -18,7 +18,6 @@ export class ActionSheetsPage {
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams, 
-    public constant: ConstantProvider, 
     public actionSheetCtrl: ActionSheetController) {
   }
 
