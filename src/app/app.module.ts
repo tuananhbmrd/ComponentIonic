@@ -39,6 +39,11 @@ import { ToastPage } from '../pages/toast/toast';
 import { TogglePage } from '../pages/toggle/toggle';
 import { ToolbarPage } from '../pages/toolbar/toolbar';
 import { HttpModule } from '../../node_modules/@angular/http';
+import { ProfilePage } from '../pages/profile/profile';
+import { AlertService } from '../providers/utilities/alert.service';
+import { CameraProvider } from '../providers/utilities/camera.provider';
+import { ToastService } from '../providers/utilities/toast.service';
+import { Camera } from '../../node_modules/@ionic-native/camera';
 
 @NgModule({
   declarations: [
@@ -72,7 +77,8 @@ import { HttpModule } from '../../node_modules/@angular/http';
     TabsPage,
     ToastPage,
     TogglePage,
-    ToolbarPage
+    ToolbarPage,
+    ProfilePage
   ],
   imports: [
     BrowserModule,
@@ -114,14 +120,19 @@ import { HttpModule } from '../../node_modules/@angular/http';
     TabsPage,
     ToastPage,
     TogglePage,
-    ToolbarPage
+    ToolbarPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ConstantProvider,
-    UtilitiesProvider
+    UtilitiesProvider,
+    AlertService,
+    CameraProvider,
+    ToastService,
+    Camera
   ]
 })
 export class AppModule {}

@@ -32,6 +32,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { ToastPage } from '../pages/toast/toast';
 import { TogglePage } from '../pages/toggle/toggle';
 import { ToolbarPage } from '../pages/toolbar/toolbar';
+import { ProfilePage } from '../pages/profile/profile';
 
 @Component({
   templateUrl: 'app.html'
@@ -68,6 +69,7 @@ export class MyApp {
       { title: 'Modals', component: ModalsPage},
       { title: 'Navigation', component: NavigationPage},
       { title: 'Popover', component: PopoverPage},
+      { title: 'Profile', component: ProfilePage},
       { title: 'Radio', component: RadioPage},
       { title: 'SearchBar', component: SearchbarPage},
       { title: 'Segment', component: SegmentPage},
@@ -76,7 +78,7 @@ export class MyApp {
       { title: 'Tabs', component: TabsPage},
       { title: 'Toast', component: ToastPage},
       { title: 'Toggle', component: TogglePage},
-      { title: 'Toolbar', component: ToolbarPage}
+      { title: 'Toolbar', component: ToolbarPage},
     ];
 
   }

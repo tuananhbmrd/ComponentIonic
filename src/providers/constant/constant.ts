@@ -14,4 +14,13 @@ export class ConstantProvider {
     console.log('Hello ConstantProvider Provider');
   }
 
+  public languages = ['English', 'Portuguese', 'French'];
+  public paymentMethods = ['Paypal', 'Credit Card'];
+  public currencies = ['USD', 'BRL', 'EUR'];
+
+  public logout = {
+    tittleLogout: "Are you sure?",
+    messageLogout: "This will log you out of this application.",
+    messageLogoutS: 'Logged out of the application'
+  }
 }

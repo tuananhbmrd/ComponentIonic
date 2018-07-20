@@ -10,12 +10,124 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name='contact'></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>Buttons</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="buttons-components-page">
+  <ion-card>
+    <ion-card-content>
+      <img src="assets/imgs/bocon.jpg" />
+    </ion-card-content>
 
+    <ion-item>
+      <button ion-button clear item-start>Like</button>
+      <button ion-button clear item-end>Comment</button>
+    </ion-item>
+  </ion-card>
+
+  <ion-list>
+    <ion-item>
+      Inner Button
+      <button ion-button item-end outline>Outline</button>
+    </ion-item>
+
+    <ion-item>
+      Left Icon Button
+      <button ion-button item-end outline icon-start>
+        <ion-icon name='star'></ion-icon>
+        Left Icon
+      </button>
+    </ion-item>
+
+    <ion-item>
+      Right Icon Button
+      <button ion-button item-end outline icon-end>
+        Right Icon
+        <ion-icon name='star'></ion-icon>
+      </button>
+    </ion-item>
+
+    <p>
+      <button ion-button color="light" icon-start>
+        <ion-icon name='arrow-back'></ion-icon>
+        Back
+      </button>
+
+      <button ion-button color="light" icon-only>
+        <ion-icon name='arrow-down'></ion-icon>
+      </button>
+
+      <button ion-button color="light" icon-only>
+        <ion-icon name='arrow-up'></ion-icon>
+      </button>
+
+      <button ion-button color="light" icon-end>
+        Next
+        <ion-icon name='arrow-forward'></ion-icon>
+      </button>
+    </p>
+
+    <p>
+      <button ion-button icon-start>
+        <ion-icon name='home'></ion-icon>
+        Home
+      </button>
+      <button ion-button outline icon-start>
+        <ion-icon name='briefcase' is-active="false"></ion-icon>
+        Work
+      </button>
+      <button ion-button clear icon-start>
+        <ion-icon name='beer' is-active="false"></ion-icon>
+        Pub
+      </button>
+    </p>
+
+    <p>
+      <button ion-button color="secondary" icon-start>
+        <ion-icon name='people'></ion-icon>
+        Friends
+      </button>
+      <button ion-button color="secondary" outline icon-start>
+        <ion-icon name='paw' is-active="false"></ion-icon>
+        Best Friend
+      </button>
+    </p>
+
+    <p>
+      <button ion-button color="danger" icon-start>
+        <ion-icon name='close'></ion-icon>
+        Remove
+      </button>
+      <button ion-button color="danger" outline icon-only>
+        <ion-icon name='remove-circle' is-active="false"></ion-icon>
+      </button>
+      <button ion-button color="danger" clear icon-only>
+        <ion-icon name='trash' is-active="false"></ion-icon>
+      </button>
+    </p>
+
+    <p>
+      <button ion-button color="dark" round icon-start>
+        <ion-icon name='construct' is-active="false"></ion-icon>
+        Tools
+      </button>
+      <button ion-button color="dark" clear icon-only>
+        <ion-icon name='hammer' is-active="false"></ion-icon>
+      </button>
+    </p>
+    <button ion-button small>Small</button>
+    <button ion-button>Default</button>
+    <button ion-button large>Large</button>
+    <button ion-button block>Block Button</button>
+
+
+  </ion-list>
 </ion-content>

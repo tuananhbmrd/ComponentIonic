@@ -15,6 +15,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DateTimePage {
 
+  public event = {
+    month: '1996-01-06',
+    timeStarts: '07:43',
+    timeEnds: '1996-01-06'
+  }
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
