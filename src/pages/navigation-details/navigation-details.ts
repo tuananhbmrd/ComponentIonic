@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the SegmentPage page.
+ * Generated class for the NavigationDetailsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,18 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-segment',
-  templateUrl: 'segment.html',
+  selector: 'page-navigation-details',
+  templateUrl: 'navigation-details.html',
 })
-export class SegmentPage {
-
-  public pet : string = "puppies";
+export class NavigationDetailsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SegmentPage');
+    console.log('ionViewDidLoad NavigationDetailsPage');
   }
 
 }

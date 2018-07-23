@@ -33,6 +33,7 @@ import { ToastPage } from '../pages/toast/toast';
 import { TogglePage } from '../pages/toggle/toggle';
 import { ToolbarPage } from '../pages/toolbar/toolbar';
 import { ProfilePage } from '../pages/profile/profile';
+import { Subject } from '../../node_modules/rxjs/Subject';
 
 @Component({
   templateUrl: 'app.html'
@@ -41,45 +42,52 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = HomePage;
+  activePage = new Subject();
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any, active: boolean}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
-      { title: 'Action Sheets', component: ActionSheetsPage},
-      { title: 'Alerts', component: AlertsPage},
-      { title: 'Badges', component: BadgesPage},
-      { title: 'Buttons', component: ButtonsPage},
-      { title: 'Cards', component: CardsPage},
-      { title: 'Checkbox', component: CheckboxPage},
-      { title: 'DateTime', component: DateTimePage},
-      { title: 'FABs', component: FabsPage},
-      { title: 'Gestures', component: GesturesPage},
-      { title: 'Grid', component: GridPage},
-      { title: 'Icons', component: IconsPage},
-      { title: 'Inputs', component: InputsPage},
-      { title: 'Lists', component: ListsPage},
-      { title: 'Loading', component: LoadingPage},
-      { title: 'Menus', component: MenusPage},
-      { title: 'Modals', component: ModalsPage},
-      { title: 'Navigation', component: NavigationPage},
-      { title: 'Popover', component: PopoverPage},
-      { title: 'Profile', component: ProfilePage},
-      { title: 'Radio', component: RadioPage},
-      { title: 'SearchBar', component: SearchbarPage},
-      { title: 'Segment', component: SegmentPage},
-      { title: 'Select', component: SelectPage},
-      { title: 'Slides', component: SlidesPage},
-      { title: 'Tabs', component: TabsPage},
-      { title: 'Toast', component: ToastPage},
-      { title: 'Toggle', component: TogglePage},
-      { title: 'Toolbar', component: ToolbarPage},
+      { title: 'Home', component: HomePage, active: true },
+      { title: 'List', component: ListPage, active: false },
+      { title: 'Action Sheets', component: ActionSheetsPage, active: false},
+      { title: 'Alerts', component: AlertsPage, active: false},
+      { title: 'Badges', component: BadgesPage, active: false},
+      { title: 'Buttons', component: ButtonsPage, active: false},
+      { title: 'Cards', component: CardsPage, active: false},
+      { title: 'Checkbox', component: CheckboxPage, active: false},
+      { title: 'DateTime', component: DateTimePage, active: false},
+      { title: 'FABs', component: FabsPage, active: false},
+      { title: 'Gestures', component: GesturesPage, active: false},
+      { title: 'Grid', component: GridPage, active: false},
+      { title: 'Icons', component: IconsPage, active: false},
+      { title: 'Inputs', component: InputsPage, active: false},
+      { title: 'Lists', component: ListsPage, active: false},
+      { title: 'Loading', component: LoadingPage, active: false},
+      { title: 'Menus', component: MenusPage, active: false},
+      { title: 'Modals', component: ModalsPage, active: false},
+      { title: 'Navigation', component: NavigationPage, active: false},
+      { title: 'Popover', component: PopoverPage, active: false},
+      { title: 'Profile', component: ProfilePage, active: false},
+      { title: 'Radio', component: RadioPage, active: false},
+      { title: 'SearchBar', component: SearchbarPage, active: false},
+      { title: 'Segment', component: SegmentPage, active: false},
+      { title: 'Select', component: SelectPage, active: false},
+      { title: 'Slides', component: SlidesPage, active: false},
+      { title: 'Tabs', component: TabsPage, active: false},
+      { title: 'Toast', component: ToastPage, active: false},
+      { title: 'Toggle', component: TogglePage, active: false},
+      { title: 'Toolbar', component: ToolbarPage, active: false},
     ];
+
+    this.activePage.subscribe((selectedPage: any) => {
+      this.pages.map(page => {
+        page.active = page.title === selectedPage.title;
+      });
+    });
 
   }
 

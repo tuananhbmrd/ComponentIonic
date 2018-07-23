@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ActionSheetController } from 'ionic-angular';
-import { ConstantProvider } from '../../providers/constant/constant';
 
 /**
  * Generated class for the ActionSheetsPage page.

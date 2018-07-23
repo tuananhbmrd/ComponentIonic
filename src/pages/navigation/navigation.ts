@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavigationDetailsPage } from '../navigation-details/navigation-details';
+import { ConstantProvider } from '../../providers/constant/constant';
 
 /**
  * Generated class for the NavigationPage page.
@@ -15,11 +17,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class NavigationPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public items : any = [];
+
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    public constant: ConstantProvider) {
+      this.init();
+  }
+
+  init(){
+    this.items = this.constant.items
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NavigationPage');
   }
 
+  openNavDetailsPage(item) {
+    this.navCtrl.push(NavigationDetailsPage, { item: item });
+  }
 }
